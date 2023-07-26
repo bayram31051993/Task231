@@ -1,0 +1,85 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/mvc"-->
+<!--       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">-->
+<!--    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"-->
+<!--    xmlns:beans = "http://www.springframework.org/schema/beans"-->
+<!--    xmlns:context = "http://www.springframework.org/schema/context"-->
+<!--    xmlns:tx = "http://www.springframework.org/schema/tx"-->
+<!--    xsi:schemaLocation = "http://www.springframework.org/schema/mvc-->
+<!--    http://www.springframework.org/schema/mvc/spring-mvc.xsd-->
+<!--    http://www.springframework.org/schema/beans-->
+<!--    http://www.springframework.org/schema/beans/spring-beans.xsd-->
+<!--    http://www.springframework.org/schema/context-->
+<!--    http://www.springframework.org/schema/context/spring-context.xsd-->
+<!--    http://www.springframework.org/schema/tx-->
+<!--    http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">-->
+
+<!--    <annotation-driven />-->
+
+<!--    <resources mapping = "/resources/**" location = "/resources/" />-->
+
+<!--    <beans:bean id = "dataSource"-->
+<!--                class = "org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+<!--        <beans:property name = "driverClassName" value = "org.postgresql.Driver" />-->
+<!--        <beans:property name = "url" value = "jdbc:postgresql://localhost:5432/company" />-->
+<!--        <beans:property name = "username" value = "postgres" />-->
+<!--        <beans:property name = "password" value = "postgresql" />-->
+<!--        &lt;!&ndash;<property name = "socketTimeout" value = "10"/>&ndash;&gt;-->
+
+<!--        <beans:property name = "connectionProperties">-->
+<!--            <beans:props>-->
+<!--                <beans:prop key = "socketTimeout">10</beans:prop>-->
+<!--            </beans:props>-->
+<!--        </beans:property>-->
+<!--    </beans:bean>-->
+
+
+<!--    <beans:bean id = "hibernate4AnnotatedSessionFactory"-->
+<!--                class = "org.springframework.orm.hibernate4.LocalSessionFactoryBean">-->
+<!--        <beans:property name = "dataSource" ref = "dataSource" />-->
+<!--        <beans:property name = "annotatedClasses">-->
+<!--            <beans:list>-->
+<!--                <beans:value>com.springmvc.Employee</beans:value>-->
+<!--            </beans:list>-->
+<!--        </beans:property>-->
+
+<!--        <beans:property name = "hibernateProperties">-->
+<!--            <beans:props>-->
+<!--                <beans:prop-->
+<!--                        key = "hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect-->
+<!--                </beans:prop>-->
+<!--                <beans:prop key = "hibernate.show_sql">true</beans:prop>-->
+<!--            </beans:props>-->
+<!--        </beans:property>-->
+<!--    </beans:bean>-->
+
+<!--    <context:component-scan base-package = "web.Util" />-->
+
+
+<!--    <tx:annotation-driven transaction-manager = "transactionMgr"/>-->
+
+<!--    <beans:bean id = "transactionMgr"-->
+<!--                class = "org.springframework.orm.jpa.JpaTransactionManager">-->
+<!--        <beans:property name = "entityManagerFactory" ref = "mgrFactory"/>-->
+<!--    </beans:bean>-->
+
+<!--    <beans:bean id = "mgrFactory" class = "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
+<!--        <beans:property name = "dataSource" ref = "dataSource"/>-->
+<!--        <beans:property name = "packagesToScan" value = "com.springmvc"/>-->
+<!--        <beans:property name = "jpaVendorAdapter">-->
+<!--            <beans:bean class = "org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>-->
+<!--        </beans:property>-->
+<!--        <beans:property name = "jpaProperties">-->
+<!--            <beans:props>-->
+<!--                <beans:prop key = "hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</beans:prop>-->
+<!--                <beans:prop key = "hibernate.dialect">${hibernate.dialect}</beans:prop>-->
+<!--                <beans:prop key = "hibernate.cache.use_second_level_cache">${hibernate.cache.use_second_level_cache}</beans:prop>-->
+<!--                <beans:prop key = "hibernate.cache.use_query_cache">${hibernate.cache.use_query_cache}</beans:prop>-->
+<!--                <beans:prop key = "hibernate.show_sql">${hibernate.show_sql}</beans:prop>-->
+<!--                <beans:prop key = "hibernate.format_sql">${hibernate.format_sql}</beans:prop>-->
+<!--            </beans:props>-->
+<!--        </beans:property>-->
+<!--    </beans:bean>-->
+<!--</beans>-->
