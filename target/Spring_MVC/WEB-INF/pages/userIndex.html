@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+
+<style>table {
+    border-spacing: 0 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+th {
+    padding: 10px 20px;
+    background: #56433D;
+    color: #F9C941;
+    border-right: 2px solid;
+    font-size: 0.9em;
+}
+
+th:first-child {
+    text-align: left;
+}
+
+th:last-child {
+    border-right: none;
+}
+
+td {
+    vertical-align: middle;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    border-top: 2px solid #56433D;
+    border-bottom: 2px solid #56433D;
+    border-right: 2px solid #56433D;
+}
+
+td:first-child {
+    border-left: 2px solid #56433D;
+    border-right: none;
+}
+
+td:nth-child(2) {
+    text-align: left;
+}</style>
+
+<br/>
+<br/>
+<table class="table_blur">
+    <tr>
+        <th colspan="5" text-align="center">Users</th>
+    </tr>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th></th>
+    </tr>
+
+    <tr th:each="user : ${usersIndex}">
+        <td><a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getId()}">user</a></td>
+        <td><a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getName()}">user</a></td>
+        <td><a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getEmail()}">user</a></td>
+        <td><a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getPhone()}">user</a></td>
+        <td><a th:href="@{/users/{id}/edit(id=${user.getId()})}">Change</a></td>
+    </tr>
+</table>
+
+<br/>
+<table>
+    <td>
+        <form action="/users/new">
+            <button type="submit">Add new User</button>
+        </form>
+    </td>
+
+    <td>
+        <form action="/users">
+            <button type="submit">Show all users</button>
+        </form>
+    </td>
+</table>
+</body>
+</html>
